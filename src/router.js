@@ -48,6 +48,7 @@ router.beforeEach((to, from, next) => {
   const loggedIn = localStorage.getItem("user");
   // verifie si l'user s'est deja connecter avant qu'il accede au route
   // si non il est rediriger vers le login
+  // peut être adapté pour faire une meilleur gestion des droits
   if (publicPages.includes(to.path)) {
     next();
   } else if (loggedIn) {
